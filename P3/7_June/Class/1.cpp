@@ -1,0 +1,22 @@
+/*
+log(N!)
+*/
+
+#include<bits/stdc++.h>
+using namespace std;
+
+double sumlog(int n)
+{
+    if(n==0)
+    {
+        return 0;
+    }
+    return sumlog(n-1)+ log10(n);
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    cout << sumlog(n);
+}

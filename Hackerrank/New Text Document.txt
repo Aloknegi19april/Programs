@@ -1,0 +1,48 @@
+#include<stdio.h>
+int main()
+{
+    int m,n,i,j,Ar[100000],Br[100000];
+    int x[100000],c[100000],k=0,temp;
+    scanf("%d",&m);
+    for(i=0;i<m;i++)
+    {
+        scanf("%d",&Ar[i]);
+        c[Ar[i]]=0;
+    }
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&Br[i]);
+    }
+    for(i=0;i<m;i++)
+    {
+        for(j=0;j<n;j++)
+        {
+            if(Ar[i]==Br[j])
+            {
+                c[Ar[i]]++;
+            }
+            if(c[Ar[i]]>1)
+            {
+                x[k]=Ar[i];
+                k++;
+            }
+        }
+    }
+    for(i=0;i<k;i++)
+    {
+        for(j=0;j<k;j++)
+        {
+            if(x[i]<x[j])
+            {
+                temp=x[i];
+                x[i]=x[j];
+                x[j]=x[i];
+            }
+        }
+    }
+    for (i = 0; i < k; i++) 
+    {
+      printf("%d ", x[i]);
+    }
+}
