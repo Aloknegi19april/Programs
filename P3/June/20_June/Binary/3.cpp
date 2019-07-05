@@ -8,7 +8,7 @@ public:
     int data;
     node *left ,*right;
 };
-
+int max3(int a, int b, int c)
 {
     if(a > b && a > c)
         return a;
